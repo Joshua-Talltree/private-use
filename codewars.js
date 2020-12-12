@@ -75,3 +75,44 @@ console.log(duplicateCount("aabbcde"), 2);
 console.log(duplicateCount("aabBcde"), 2,"should ignore case");
 console.log(duplicateCount("Indivisibility"), 1)
 console.log(duplicateCount("Indivisibilities"), 2, "characters may not be adjacent")
+
+// Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+
+
+// return masked string
+function maskify(cc) {
+    if (cc.length > 4) {
+        var reversed = reverse(cc);
+        var newString = '';
+        for (var i = 0; i < reversed.length; i++) {
+            if (i < 4) {
+                newString += reversed[i];
+            } else {
+                newString += '#';
+            }
+        }
+        return reverse(newString);
+    } else {
+        return cc;
+    }
+}
+function reverse(str) {
+    return str.split("").reverse().join("");
+}
+
+console.log((maskify('4556364607935616'), '############5616'));;
+console.log((maskify('1'), '1'));;
+console.log((maskify('11111'), '#1111'));;
+
+// Short-hand solution:
+
+// function maskify(cc) {
+//     cc = cc.split("");
+//     for(var i = 0; i < cc.length - 4; i++){
+//         cc[i] = "#";
+//     }
+//
+//     cc = cc.join("");
+//     return cc
+// }
