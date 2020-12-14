@@ -116,3 +116,15 @@ console.log((maskify('11111'), '#1111'));;
 //     cc = cc.join("");
 //     return cc
 // }
+
+// Check to see if it's a pangram or not.
+
+function isPangram(string){
+    string = string.toLowerCase();
+    return "abcdefghijklmnopqrstuvwxyz"
+        .split("").every(function(x){
+            return string.indexOf(x) !== -1;
+        });
+}
+console.log((isPangram(string), true));
+console.log((isPangram(string), false));
