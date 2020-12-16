@@ -20,6 +20,16 @@ function openOrSenior(data){
     return array;
 }
 
+// Different way of completing challenge.
+
+// function tribonacci(s,n){
+//     var arr = [];
+//     for(var i=0; i<n; i++) {
+//         arr.push((i<3) ? s[i] : arr[i-1]+arr[i-2]+arr[i-3]);
+//     }
+//     return arr;
+// }
+
 console.log(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]));
 console.log(openOrSenior([[3, 12],[55,1],[91, -2],[54, 23]]));
 
